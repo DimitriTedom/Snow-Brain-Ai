@@ -1,10 +1,10 @@
-import styles from './App.module.css';
-import logo from '/Snow-Brain-AI.png';
 import Chat from './components/Chat/Chat';
 import { useState } from 'react';
 import Controls from './components/Controls/Controls';
 import { Assistant } from './assistants/googleai';
 import Loader from './components/Loader/Loader';
+import Logo from './components/Logo';
+import DarkModeToggle from './components/DarkModeToggle';
 // Initialiser GoogleGenerativeAI
 
 
@@ -62,14 +62,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className={styles.App}>
+    <div className="flex flex-col gap-4 h-[100vh] p-4 dark:bg-gray-900">
       {isloading && <Loader/>}
-      <header className={styles.Header}>
-        <img src={logo} alt="logo" className={styles.Logo} />
-        <h2 className={styles.Title}>AI Chatbot</h2>
+      <header className="text-center">
+        <Logo/>
       </header>
-
-      <div className={styles.ChatContainer}>
+      <DarkModeToggle/>
+      <div className="h-[100%] rounded-2xl overflow-y-auto bg-lightGray dark:bg-white">
         <Chat messages={messages} />
       </div>
       <Controls isDisable={isloading || isStreaming} onSend={handleContentSend}/>

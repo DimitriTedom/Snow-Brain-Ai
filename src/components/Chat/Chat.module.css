@@ -11,7 +11,7 @@
     width: 90%;
     padding: 0 16px;
     border-radius: 16px;
-    font-size: 14px;
+    font-size: 18px;
 
     &[data-role="user"]{
         align-self: flex-end;

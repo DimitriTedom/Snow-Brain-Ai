@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent,useRef, useEffect } from 'react';
-import Styles from './Control.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
 // Définir les props du composant
 type ControlsProps = {
@@ -35,12 +34,12 @@ const Controls: React.FC<ControlsProps> = ({ isDisable=false, onSend }) => {
     }
   }
   return (
-    <div className={Styles.Controls}>
-      <div className={Styles.TextAreaContainer}>
+    <div className="flex items-center gap-2 w-full">
+      <div className="py-2 px-8 rounded-2xl bg-lightGray dark:bg-white flex items-center grow">
         <TextareaAutosize
           ref={textAreaRef}
-          placeholder="Message AI Chatbot"
-          className={Styles.TextArea}
+          placeholder="Message Snow Brain Ai"
+          className="w-full h-full border-none outline-none resize-none bg-lightGray dark:bg-white disabled:cursor-not-allowed disabled:opacity-[0.35]"
           value={content}
           onChange={handleChange}
           onKeyDown={handleKeyPress}
@@ -49,7 +48,7 @@ const Controls: React.FC<ControlsProps> = ({ isDisable=false, onSend }) => {
           disabled={isDisable}
         />
       </div>
-      <button className={Styles.Button} onClick={handleClick} disabled={isDisable}> 
+      <button className="flex justify-center items-center w-[36px] h-[36px] rounded-[50%] border-none outline-none bg-blackCoal dark:bg-coldBlue disabled:cursor-not-allowed disabled:opacity-[0.35] hover:cursor-pointer hover:bg-cyan" onClick={handleClick} disabled={isDisable}> 
         <SendIcon />
       </button>
     </div>

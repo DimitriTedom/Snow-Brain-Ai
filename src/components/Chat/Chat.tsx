@@ -38,7 +38,7 @@ const Chat: React.FC<ChatProps> = ({ messages }) => {
 
   return (
     <div className="p-8">
-      <h1 className="text-center text-xl">Hello! How can I assist you today?</h1>
+      {/* <h1 className="text-center text-xl font-semibold">Hello! How can I assist you today?</h1> */}
       <div className={Styles.Chat}>
         {[ [WELCOME_MESSAGE_GROUP], ...messagesGroups].map((group, groupIndex) => (
           <div key={groupIndex} className={Styles.Group}>

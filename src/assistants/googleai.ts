@@ -37,3 +37,13 @@ export class Assistant {
      }
     }
 } 
+
+// Illustration d'une interaction utilisateur :
+// Étape 1 : L'utilisateur envoie une question via le champ de texte.
+// Étape 2 : Un message de type user est ajouté à l'état des messages.
+// Étape 3 : L'application envoie la question au serveur (via assistant.chat ou chatStream).
+// Étape 4 : Une fois le streaming commencé :
+// Un message vide de type assistant est ajouté.
+// Les chunks reçus sont ajoutés progressivement au message.
+// Étape 5 : Le message est mis à jour en temps réel dans l'interface utilisateur.
+// Étape 6 : Quand le serveur a fini de transmettre les données, le streaming se termine
