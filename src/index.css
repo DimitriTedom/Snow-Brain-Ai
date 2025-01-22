@@ -1,0 +1,52 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  /* color-scheme: light dark; */
+  color: light-dark(#0d0d0d, #ececec);
+  background: light-dark(#f3f3f3, #171717);
+  --snow-white : #F9FAFB;
+  --cold-blue : #4A90E2;
+  --dark-blue : #1A2930;
+  --light-gray : #E3E8ED;
+  --black-coal : #2E3A42;
+  --cyan : #00D2FF;
+  --smoot-green : #00C853;
+}
+body{
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply  font-poppins;
+  }
+
+  /* h1, h2, h3, h4, h5, h6 {
+    @apply ;
+  } */
+}
+
+/* @layer components {
+
+} */
+
+.text-balance {
+  text-wrap: balance;
+}
