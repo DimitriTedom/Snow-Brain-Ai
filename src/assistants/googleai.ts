@@ -22,7 +22,7 @@ export class Assistant {
         }
     }
 
-    async *chatStream (content: string):Promise<void> {
+    async *chatStream (content: string): AsyncGenerator<string, void, unknown> {
         try {
             const result = await this.#chat.sendMessageStream(content);
             for await (const chunk of result.stream){
