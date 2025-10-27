@@ -170,22 +170,92 @@ yarn build
 2. Upload the `dist` folder to Netlify
 3. Configure environment variables in Netlify dashboard
 
+## 🗺️ Roadmap & Future Features
+
+Snow Brain AI is continuously evolving! Here's what's coming next and how you can contribute:
+
+### 🔥 **High Priority Features**
+
+#### 🧠 **Memory & Context Management**
+- **Persistent Conversation Memory**: Save conversations across browser sessions
+- **Smart Context Management**: Intelligent trimming while preserving important context
+- **Conversation Export/Import**: Download and restore conversation history
+- **Memory Search**: Search through previous conversations and responses
+
+#### 🔐 **Authentication & User Profiles**
+- **User Authentication**: Secure login with email or social providers
+- **Profile Customization**: Personal avatars, themes, and preferences
+- **Cross-Device Sync**: Access conversations from any device
+- **Privacy Controls**: Advanced settings for data privacy and sharing
+
+#### 🎙️ **Voice & Audio Features**
+- **Voice Input**: Speech-to-text for hands-free interaction
+- **Voice Responses**: Text-to-speech with natural-sounding voices
+- **Audio Messages**: Send and receive voice messages
+- **Voice Commands**: Navigate the interface with voice controls
+
+### 🎯 **Medium Priority Features**
+
+#### 🤖 **Advanced AI Capabilities**
+- **Multi-Model Support**: Choose between GPT-4, Claude, Gemini, and more
+- **AI Personas**: Pre-configured personalities (Assistant, Teacher, Coder, etc.)
+- **Custom System Prompts**: Tailor AI behavior for specific use cases
+- **Function Calling**: Integration with external APIs and tools
+- **Temperature Control**: Adjust creativity and randomness settings
+
+#### 🎨 **Enhanced UI/UX**
+- **Custom Themes**: User-created color schemes and layouts
+- **Message Reactions**: React to messages with emojis
+- **Rich Text Formatting**: Bold, italic, code blocks, and more
+- **Typing Indicators**: Real-time feedback during AI generation
+- **Message Timestamps**: Detailed conversation timeline
+
+#### 📱 **Mobile & Accessibility**
+- **Progressive Web App**: Full offline support and mobile installation
+- **Enhanced Mobile UI**: Touch gestures and mobile-optimized interface
+- **Accessibility Features**: Screen reader support and keyboard navigation
+- **Internationalization**: Multi-language support for global users
+
+### 🔧 **Developer & Power User Features**
+
+#### 🛠️ **Advanced Functionality**
+- **Plugin System**: Extensible architecture for third-party integrations
+- **API Access**: RESTful API for external applications
+- **Webhook Support**: Real-time notifications and integrations
+- **Admin Dashboard**: Analytics, user management, and system monitoring
+
+#### 🧪 **Quality & Performance**
+- **Comprehensive Testing**: Unit, integration, and E2E test coverage
+- **Performance Monitoring**: Real-time performance metrics and alerts
+- **Error Tracking**: Advanced error reporting and debugging tools
+- **Rate Limiting**: Smart usage controls and optimization
+
 ## 🤝 Contributing
 
-We welcome contributions! Here's how to get started:
+We welcome contributions from developers of all skill levels! Check out our **[CONTRIBUTING.md](CONTRIBUTING.md)** for detailed guidelines.
 
+### **Quick Start for Contributors**
 1. **Fork the repository**
 2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Commit your changes**: `git commit -m 'Add amazing feature'`
-4. **Push to branch**: `git push origin feature/amazing-feature`
-5. **Open a Pull Request**
+3. **Read [CONTRIBUTING.md](CONTRIBUTING.md)** for detailed setup instructions
+4. **Check [Issues](https://github.com/DimitriTedom/Snow-Brain-Ai/issues)** for tasks marked `good-first-issue`
+5. **Join [Discussions](https://github.com/DimitriTedom/Snow-Brain-Ai/discussions)** to connect with the community
 
 ### **Development Guidelines**
-- Follow TypeScript best practices
-- Maintain component modularity
-- Test thoroughly in both light and dark themes
-- Ensure mobile responsiveness
-- Document any new features
+- Follow TypeScript best practices and use proper type definitions
+- Maintain the glassmorphism design language and theme consistency
+- Test thoroughly in both light and dark modes
+- Ensure mobile responsiveness across all components
+- Document any new features with JSDoc comments
+- Write comprehensive tests for new functionality
+
+### **Priority Contribution Areas**
+- 🧠 **Memory System**: Help implement persistent conversation storage
+- 🔐 **Authentication**: Build secure user management features  
+- 🎙️ **Voice Features**: Add speech-to-text and text-to-speech capabilities
+- 📱 **Mobile UX**: Enhance the mobile experience and PWA features
+- 🧪 **Testing**: Improve test coverage and quality assurance
+- 📚 **Documentation**: Create tutorials and improve existing docs
 
 ## 📄 License
 
