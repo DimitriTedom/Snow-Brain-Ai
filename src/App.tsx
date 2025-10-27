@@ -105,15 +105,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-slate-100 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      <div className="absolute inset-0 bg-grid-slate-900/[0.02] dark:bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 relative font-sans">
+      {/* Background Elements */}
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] -z-10"></div>
+      <div className="fixed inset-0 bg-grid-slate-900/[0.02] dark:bg-grid-white/[0.02] bg-[size:60px_60px] -z-10"></div>
       
       {/* Floating Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/20 dark:bg-blue-500/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-purple-500/20 dark:bg-purple-500/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-500/20 dark:bg-pink-500/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      <div className="fixed top-1/4 left-1/4 w-72 h-72 bg-blue-500/20 dark:bg-blue-500/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob -z-10"></div>
+      <div className="fixed top-1/3 right-1/4 w-72 h-72 bg-purple-500/20 dark:bg-purple-500/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 -z-10"></div>
+      <div className="fixed bottom-1/4 left-1/3 w-72 h-72 bg-pink-500/20 dark:bg-pink-500/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 -z-10"></div>
 
       {/* Loading Overlay */}
       {isLoading && (
@@ -122,8 +122,8 @@ const App: React.FC = () => {
         </div>
       )}
       
-      {/* Header - Floating */}
-      <header className="absolute top-0 left-0 right-0 z-40 bg-white/20 dark:bg-white/5 backdrop-blur-md border-b border-gray-200/30 dark:border-white/10">
+      {/* Header - Fixed */}
+      <header className="sticky top-0 left-0 right-0 z-40 bg-white/20 dark:bg-white/5 backdrop-blur-md border-b border-gray-200/30 dark:border-white/10">
         <div className="px-8 py-6 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="w-10 h-10 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center p-1 border-2 border-blue-400/50 shadow-lg">
@@ -140,19 +140,19 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Chat Interface - Full Screen */}
-      <main className="h-full pt-20 pb-4 px-4 flex flex-col">
-        {/* Chat Container - Full Height */}
-        <div className="flex-1 max-w-6xl mx-auto w-full flex flex-col">
-          {/* Messages Area */}
-          <div className="flex-1 mb-6 rounded-3xl bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-gray-200/30 dark:border-white/10 shadow-2xl overflow-hidden">
-            <div className="h-full overflow-y-auto p-8">
+      {/* Main Chat Interface - Scrollable Layout */}
+      <main className="pb-4 px-4 flex flex-col">
+        {/* Chat Container - Flexible Height */}
+        <div className="max-w-6xl mx-auto w-full flex flex-col">
+          {/* Messages Area - Scrollable */}
+          <div className="mb-6 rounded-3xl bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-gray-200/30 dark:border-white/10 shadow-2xl overflow-hidden">
+            <div className="max-h-[calc(100vh-280px)] overflow-y-auto p-8 scroll-smooth">
               <Chat messages={messages} />
             </div>
           </div>
 
-          {/* Input Area - Enhanced */}
-          <div className="bg-white/50 dark:bg-white/10 backdrop-blur-xl rounded-3xl border border-gray-200/50 dark:border-white/20 shadow-2xl p-6">
+          {/* Input Area - Sticky Bottom */}
+          <div className="bg-white/50 dark:bg-white/10 backdrop-blur-xl rounded-3xl border border-gray-200/50 dark:border-white/20 shadow-2xl p-6 sticky bottom-4 z-30">
             <PureMultimodalInput
               chatId="snow-brain-chat"
               messages={uiMessages}

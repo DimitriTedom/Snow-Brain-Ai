@@ -31,10 +31,12 @@ const Chat: React.FC<ChatProps> = ({ messages }) => {
   [messages]);
 
   useEffect(() => {
-    const lastMessage = messages[messages.length - 1];
-    if (lastMessage?.role === 'user') {
-      messageEndRef.current?.scrollIntoView({ behavior: "smooth" });      
-    }
+    // Auto-scroll when new messages are added or updated
+    const timer = setTimeout(() => {
+      messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, [messages]);
 
   const handleCopy = (content: string) => {
